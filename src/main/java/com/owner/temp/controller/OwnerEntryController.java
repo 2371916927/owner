@@ -5,27 +5,30 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * @author xsk
+ */
 @RestController
 @RequestMapping("/entry")
 public class OwnerEntryController {
-//
-//    @GetMapping("/fl")
-//    public String lotteryGenerateFuLi() {
-//        return LotteryGenerateUtils.randomFuLiLottery();
-//    }
-//
-//    @GetMapping("/ty")
-//    public String lotteryGenerateTiYu() {
-//        return LotteryGenerateUtils.randomTiYuLottery();
-//    }
-//
-//    @GetMapping("/flUntil")
-//    public String lotteryGenerateFuLiUntil(String param) {
-//        return LotteryGenerateUtils.randomFuLiLotteryUntil(param);
-//    }
-//
-//    @GetMapping("/tyUntil")
-//    public String lotteryGenerateTiYuUntil(String param) {
-//        return LotteryGenerateUtils.randomTiYuLotteryUntil(param);
-//    }
+
+    @GetMapping("/fl")
+    public String lotteryGenerateFuLi() {
+        return LotteryGenerateUtils.randomFuLiLottery();
+    }
+
+    @GetMapping("/ty")
+    public String lotteryGenerateTiYu() {
+        return LotteryGenerateUtils.randomTiYuLottery();
+    }
+
+    @GetMapping("/flUntil")
+    public String lotteryGenerateFuLiUntil(String param) {
+        return LotteryGenerateUtils.randomFuLiLotteryUntil(param);
+    }
+
+    @GetMapping("/tyUntil")
+    public String lotteryGenerateTiYuUntil(String param) {
+        return LotteryGenerateUtils.randomTiYuLotteryUntil(param);
+    }
 }
