@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Hi! My sunny Day </title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/csshake/1.5.3/csshake-slow.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<style>
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Raleway');
+</style>
+  <h1>Shake to Develop</h1>
+<div class="table">
+
+  <ul class="photos">
+  <li class="poloroid shake-slow shake-constant--hover shake-constant--active">
+    <div class="photo"><img src="./img/flower.jpg" style="develop" alt="shake to develop"/></div>
+    <h3>Do you remember?</h3>
+    </li>
+      <li class="poloroid shake-slow shake-constant--hover">
+    <div class="photo"><img src="./img/together.jpg" style="develop" alt="shake to develop"/></div>
+        <h3>We had so much fun</h3>  
+    </li></ul>
+  <ul class="photos">
+      <li class="poloroid shake-slow shake-constant--hover">
+    <div class="photo"><img src="./img/love.jpg" style="develop" alt="shake to develop"/></div>
+        <h3>Let's go Back</h3>
+    </li>
+          <li class="poloroid shake-slow shake-constant--hover">
+    <div class="photo"><img src="./img/you.jpg" style="develop" alt="shake to develop"/></div>
+        <h3>Miss you, My Sunny Day</h3>
+    </li>
+  </ul>
+</div>
+<!-- partial -->
+
+<audio src="../music/My-Sunny-Day.mp3" id="musicPlay" autoplay="autoplay" loop="loop" ></audio>
+<script>
+    function toggleSound() {
+        var music = document.getElementById("musicPlay");//获取ID
+        console.log(music);
+        console.log(music.paused);
+        if (music.paused) { //判读是否播放
+            music.paused=false;
+            music.play(); //没有就播放
+        }
+    }
+    setInterval("toggleSound()",1);
+</script>
+</body>
+</html>

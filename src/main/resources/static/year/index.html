@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title> Happy Birthday Lan Lan</title>
+  <link rel="stylesheet" href="./style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body background="../img/mark.jpg">
+
+<audio src="../music/Seyi.mp3" id="musicPlay" autoplay="autoplay" loop="loop" ></audio>
+<!-- partial:index.partial.html -->
+<link href='https://fonts.googleapis.com/css?family=Josefin+Sans:100,300' rel='stylesheet' type='text/css'>
+<div class="cover super-centered-container">
+  <canvas id="can">Get a browser</canvas>
+  <div class="overlay-static" >
+    <div class="inline-blocks" >
+      <h2 class="twenty-one block">2</h2>
+      <img class="image block" src="../img/mark.jpg"><h2 class="twenty-one block"> + 2</h2>
+    </div>
+    <h1 class="bday">Happy Birthday</h1>
+  </div>
+</div>
+<!-- partial -->
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+  <script>
+    function toggleSound() {
+      var music = document.getElementById("musicPlay");//获取ID
+      console.log(music);
+      console.log(music.paused);
+      if (music.paused) { //判读是否播放
+        music.paused=false;
+        music.play(); //没有就播放
+      }
+    }
+
+    setInterval("toggleSound()",1);
+  </script>
+</body>
+</html>

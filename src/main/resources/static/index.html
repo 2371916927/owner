@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>welcome page</title>
+
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+
+</head> 
+<body onload="Test()">
+
+  <canvas id="text" width="500" height="100"></canvas>
+<canvas id="stage" width="500" height="100"></canvas>
+<form id="form" name="autoForm" >
+    <input type="text" readonly="" id="inputText" value=""/>
+    <input type="submit" value="TRY IT" id="sub"/>
+</form>
+<div style="text-align:center;clear:both">
+<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+<script src="/follow.js" type="text/javascript"></script>
+</div>
+  <script src='js/EasePack.min.js'></script><script src='js/TweenLite.min.js'></script><script src='js/easeljs-0.7.1.min.js'></script><script src='js/requestAnimationFrame.js'></script>
+  <script src="js/index.js"></script>
+  <script type="text/javascript">
+	myShow();
+	function myShow(){
+        var valueText = document.getElementById("inputText");
+        valueText.value = "LanLan";
+        name = valueText.value;
+        //alert(name);
+        // setTimeout("initMouseEventDM('I')", 2500);
+        // setTimeout("initMouseEventDM('LIKE')", 4000);
+        // setTimeout("initMouseEventDM('YOU,')", 5500);
+        setTimeout("initMouseEventDM('MISS')", 1000);
+        setTimeout("initMouseEventDM('YOU')",2500);
+        setTimeout("initMouseEventDM('" + name + "')", 4000);
+        // setTimeout(function () {
+        //     window.location.href="BirthdayCake.html";
+        // },9000);
+	}
+	var name = "";
+	var x = 0;
+	var y = 0;
+	function GetAbsoluteLocation(element) { //获取响应对象的绝对路径    
+		if ( arguments.length != 1 || element == null )    
+		{         
+			return null;    
+		}     
+		var offsetTop = element.offsetTop;     
+		var offsetLeft = element.offsetLeft;     
+		var offsetWidth = element.offsetWidth;     
+		var offsetHeight = element.offsetHeight;     
+		while( element = element.offsetParent )     
+		{         
+			offsetTop += element.offsetTop;         
+			offsetLeft += element.offsetLeft;     
+		}     
+		/*return { 
+			absoluteTop: offsetTop, 
+			absoluteLeft: offsetLeft,         
+			offsetWidth: offsetWidth, 
+			offsetHeight: offsetHeight 
+		}; */
+		x = element.offsetTop;
+		y = element.offsetLeft;
+	}
+	function initMouseEventDM(value){
+		var btn = document.getElementById("sub");
+		var intputText = document.getElementById("inputText");
+		inputText.value=value;
+		var mouseClick = document.createEvent("MouseEvents");//创建一个事件,表示鼠标事件
+		/*type string类型 ：要触发的事件类型，例如‘click’。 
+　　		/bubbles Boolean类型：表示事件是否应该冒泡，针对鼠标事件模拟，该值应该被设置为true。 
+　　		cancelable bool类型：表示该事件是否能够被取消，针对鼠标事件模拟，该值应该被设置为true。 
+　　		view 抽象视图：事件授予的视图，这个值几乎全是document.defaultView. 
+　　		detail int类型：附加的事件信息这个初始化时一般应该默认为0。 
+	　　   screenX int类型 ： 事件距离屏幕左边的X坐标 
+	　  　 screenY int类型 ： 事件距离屏幕上边的y坐标 
+	   　　clientX int类型 ： 事件距离可视区域左边的X坐标 
+	　   　clientY int类型 ： 事件距离可视区域上边的y坐标 
+	　　   ctrlKey Boolean类型 ： 代表ctrol键是否被按下，默认为false。 
+	　　   altKey Boolean类型 ： 代表alt键是否被按下，默认为false。 
+	　　   shiftKey Boolean类型 ： 代表shif键是否被按下，默认为false。 
+	　　   metaKey Boolean类型： 代表meta key 是否被按下，默认是false。 
+	　　   button int类型： 表示被按下的鼠标键，默认是零. 
+　　		relatedTarget (object) ： 事件的关联对象.只有在模拟mouseover 和 mouseout时用到。*/
+		mouseClick.initMouseEvent("click",true,true,document.defaultView,0,x,y,x,y,false,false,false,false,0,null);
+		btn.dispatchEvent(mouseClick);//分配事件 给相关按钮
+	}
+	function initKeyEventDM()
+	{
+	  var eo=document.getElementById("inputText");
+	  var sub = document.getElementById("sub");
+	  if( window.outerWidth == undefined )
+	  {
+	    eo.fireEvent("onkeydown");
+	  }
+	  else if(document.implementation.hasFeature("KeyboardEvents", "3.0"))
+	  {
+	    event = document.createEvent("KeyboardEvent"); 
+　　　　　   event.initKeyEvent("keydown", true, true, document.defaultView,false,false, false,false, 13, 0);
+	    eo.dispatchEvent( event );
+	  }
+	}
+</script>
+</body>
+
+</html>

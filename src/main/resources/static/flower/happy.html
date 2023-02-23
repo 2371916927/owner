@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - #Codevember 2: Flower Power</title>
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class='wrapper'>
+  <div class='plant'>
+    <div class='flower'>
+      <div class='head'>
+        <div class='face'></div>
+      </div>
+    </div>
+    <div class='leaf__one'></div>
+    <div class='leaf__two'></div>
+    <div class='leaf__three'></div>
+  </div>
+  <div class='pot'>
+    <div class='top'></div>
+  </div>
+  <div class='text'>
+    #Good Day 1:
+    <br>
+    Happy Happy
+  </div>
+</div>
+<div class='whitespace'></div>
+
+<audio src="http://121.37.82.61:520/music/happyBgm.mp3" id="musicPlay" autoplay="autoplay" loop="loop" ></audio>
+<!-- partial -->
+<script>
+  function toggleSound() {
+    var music = document.getElementById("musicPlay");//获取ID
+    console.log(music);
+    console.log(music.paused);
+    if (music.paused) { //判读是否播放
+      music.paused=false;
+      music.play(); //没有就播放
+    }
+  }
+  setInterval("toggleSound()",1);
+</script>
+</body>
+</html>
